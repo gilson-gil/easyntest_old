@@ -33,6 +33,7 @@
 		2B78B40B1E7DC9FC009380C0 /* PhoneMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B78B40A1E7DC9FC009380C0 /* PhoneMask.swift */; };
 		2B78B40E1E7DD69B009380C0 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B78B40D1E7DD69B009380C0 /* Checkbox.swift */; };
 		2B78B4101E7DDC4C009380C0 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B78B40F1E7DDC4C009380C0 /* ActionButton.swift */; };
+		2B78B4121E7DE024009380C0 /* SelectionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B78B4111E7DE024009380C0 /* SelectionProtocol.swift */; };
 		4F07571C044BC0E94747B66C /* Pods_Easyintest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08BDADDA90A39E2800A548F1 /* Pods_Easyintest.framework */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +90,7 @@
 		2B78B40A1E7DC9FC009380C0 /* PhoneMask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneMask.swift; sourceTree = "<group>"; };
 		2B78B40D1E7DD69B009380C0 /* Checkbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
 		2B78B40F1E7DDC4C009380C0 /* ActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
+		2B78B4111E7DE024009380C0 /* SelectionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				2B78B4041E7B45AB009380C0 /* ValidatorProtocol.swift */,
+				2B78B4111E7DE024009380C0 /* SelectionProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -467,6 +470,7 @@
 				2B78B4071E7B8B04009380C0 /* PhoneValidationRule.swift in Sources */,
 				2B78B3AB1E7AA276009380C0 /* AppDelegate.swift in Sources */,
 				2B78B3F01E7AB0F4009380C0 /* HomeViewModel.swift in Sources */,
+				2B78B4121E7DE024009380C0 /* SelectionProtocol.swift in Sources */,
 				2B78B40E1E7DD69B009380C0 /* Checkbox.swift in Sources */,
 				2B78B3DE1E7AA374009380C0 /* HomeViewController.swift in Sources */,
 				2B78B3FC1E7AB3EE009380C0 /* HomeCellViewModel.swift in Sources */,

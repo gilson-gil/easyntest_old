@@ -92,5 +92,9 @@ extension HomeViewController: UITableViewDataSource {
 
 // MARK: - UITableView Delegate
 extension HomeViewController: UITableViewDelegate {
-  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    if let selectionCell = tableView.cellForRow(at: indexPath) as? SelectionProtocol {
+      selectionCell.wasSelected()
+    }
+  }
 }

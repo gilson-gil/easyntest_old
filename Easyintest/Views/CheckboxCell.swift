@@ -94,3 +94,10 @@ extension CheckboxCell: Updatable {
     }
   }
 }
+
+// MARK: - Selection Protocol
+extension CheckboxCell: SelectionProtocol {
+  func wasSelected() {
+    checkbox.isSelected = !checkbox.isSelected
+  }
+}

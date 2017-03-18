@@ -59,3 +59,10 @@ extension TextFieldCell: Updatable {
     }
   }
 }
+
+// MARK: - Selection Protocol
+extension TextFieldCell: SelectionProtocol {
+  func wasSelected() {
+    let _ = textField.becomeFirstResponder()
+  }
+}
