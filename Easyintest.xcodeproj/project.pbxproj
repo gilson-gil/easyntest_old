@@ -31,6 +31,7 @@
 		2B78B4071E7B8B04009380C0 /* PhoneValidationRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B78B4061E7B8B04009380C0 /* PhoneValidationRule.swift */; };
 		2B78B4091E7B9D2B009380C0 /* KeyboardHandlerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B78B4081E7B9D2B009380C0 /* KeyboardHandlerViewController.swift */; };
 		2B78B40B1E7DC9FC009380C0 /* PhoneMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B78B40A1E7DC9FC009380C0 /* PhoneMask.swift */; };
+		2B78B40E1E7DD69B009380C0 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B78B40D1E7DD69B009380C0 /* Checkbox.swift */; };
 		4F07571C044BC0E94747B66C /* Pods_Easyintest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08BDADDA90A39E2800A548F1 /* Pods_Easyintest.framework */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +86,7 @@
 		2B78B4061E7B8B04009380C0 /* PhoneValidationRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneValidationRule.swift; sourceTree = "<group>"; };
 		2B78B4081E7B9D2B009380C0 /* KeyboardHandlerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardHandlerViewController.swift; sourceTree = "<group>"; };
 		2B78B40A1E7DC9FC009380C0 /* PhoneMask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneMask.swift; sourceTree = "<group>"; };
+		2B78B40D1E7DD69B009380C0 /* Checkbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +209,7 @@
 				2B78B3F71E7AB296009380C0 /* CheckboxCell.swift */,
 				2B78B3F91E7AB2A2009380C0 /* SendCell.swift */,
 				2B78B3E01E7AA641009380C0 /* StatefulTextField.swift */,
+				2B78B40D1E7DD69B009380C0 /* Checkbox.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 				2B78B4071E7B8B04009380C0 /* PhoneValidationRule.swift in Sources */,
 				2B78B3AB1E7AA276009380C0 /* AppDelegate.swift in Sources */,
 				2B78B3F01E7AB0F4009380C0 /* HomeViewModel.swift in Sources */,
+				2B78B40E1E7DD69B009380C0 /* Checkbox.swift in Sources */,
 				2B78B3DE1E7AA374009380C0 /* HomeViewController.swift in Sources */,
 				2B78B3FC1E7AB3EE009380C0 /* HomeCellViewModel.swift in Sources */,
 				2B78B3F21E7AB25D009380C0 /* TextFieldCell.swift in Sources */,

@@ -10,11 +10,11 @@ import UIKit
 import Cartography
 
 final class CheckboxCell: UITableViewCell {
-  fileprivate static let buttonHeight: CGFloat = 30
+  fileprivate static let buttonHeight: CGFloat = 24
   
-  fileprivate let button: UIButton = {
-    let button = UIButton()
-    return button
+  fileprivate let checkbox: Checkbox = {
+    let checkbox = Checkbox()
+    return checkbox
   }()
   
   fileprivate let label: UILabel = {
@@ -23,6 +23,7 @@ final class CheckboxCell: UITableViewCell {
     label.font = UIFont.easyRegularFont(ofSize: 16)
     label.textAlignment = .center
     label.textColor = UIColor.easyGreyish
+    label.setContentHuggingPriority(UILayoutPriorityRequired, for: .horizontal)
     return label
   }()
   
@@ -41,21 +42,29 @@ final class CheckboxCell: UITableViewCell {
   private func setUp() {
     selectionStyle = .none
     
-    button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
-    
-    addSubview(button)
-    addSubview(label)
+    let containerView = createContainerView()
+    addSubview(containerView)
+    containerView.addSubview(checkbox)
+    containerView.addSubview(label)
     
     let margin = CGFloat(Constants.defaultMargin)
-    constrain(button, label) { button, label in
-      button.left == button.superview!.left + margin
-      button.centerY == button.superview!.centerY
-      button.width == CheckboxCell.buttonHeight
-      button.height == CheckboxCell.buttonHeight
+    constrain(containerView) { containerView in
+      containerView.top >= containerView.superview!.top
+      containerView.left >= containerView.superview!.left
+      containerView.bottom <= containerView.superview!.bottom
+      containerView.right <= containerView.superview!.right
+      containerView.center == containerView.superview!.center
+    }
+    
+    constrain(checkbox, label) { checkbox, label in
+      checkbox.left == checkbox.superview!.left + margin
+      checkbox.width == CheckboxCell.buttonHeight
+      checkbox.height == CheckboxCell.buttonHeight
       
-      label.left == button.right + margin
+      label.left == checkbox.right + margin
       label.bottom == label.superview!.bottom - margin
       label.right == label.superview!.right - margin
+      label.centerY == checkbox.centerY
     }
     
     topPaddingConstraintGroup = constrain(label) { label in
@@ -64,10 +73,13 @@ final class CheckboxCell: UITableViewCell {
   }
 }
 
-// MARK: - Actions
-extension CheckboxCell {
-  func buttonTapped() {
-    button.isSelected = !button.isSelected
+// MARK: - Views
+fileprivate extension CheckboxCell {
+  func createContainerView() -> UIView {
+    let view = UIView()
+    view.setContentHuggingPriority(UILayoutPriorityRequired, for: .horizontal)
+    view.setContentHuggingPriority(UILayoutPriorityRequired, for: .vertical)
+    return view
   }
 }
 
