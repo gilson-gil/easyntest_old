@@ -61,6 +61,7 @@ final class HomeViewController: UIViewController {
     let keyboardHandlerViewController = KeyboardHandlerViewController(scrollView: tableView)
     keyboardHandlerViewController.willMove(toParentViewController: self)
     keyboardHandlerViewController.view.alpha = 0
+    keyboardHandlerViewController.view.frame = .zero
     addChildViewController(keyboardHandlerViewController)
     view.addSubview(keyboardHandlerViewController.view)
     keyboardHandlerViewController.didMove(toParentViewController: self)
