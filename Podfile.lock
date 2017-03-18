@@ -1,0 +1,15 @@
+PODS:
+  - Cartography (1.0.1)
+  - Validator (2.1.1)
+
+DEPENDENCIES:
+  - Cartography (~> 1.0.1)
+  - Validator (~> 2.1.1)
+
+SPEC CHECKSUMS:
+  Cartography: c1460e99395b824d9d75360b0382faeb0b33dcd7
+  Validator: b1793fbfd0046097551d0edd18e2c30792d69ef5
+
+PODFILE CHECKSUM: 033ad9926f456d5fe025a325843e06f21a98c70e
+
+COCOAPODS: 1.2.0
