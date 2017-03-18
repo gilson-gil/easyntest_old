@@ -12,12 +12,8 @@ import Cartography
 final class SendCell: UITableViewCell {
   fileprivate static let buttonHeight: CGFloat = 50
   
-  fileprivate let button: UIButton = {
-    let button = UIButton()
-    button.backgroundColor = UIColor.easyDarkSkyBlueTwo
-    button.setTitleColor(UIColor.white, for: .normal)
-    button.titleLabel?.font = UIFont.easyRegularFont(ofSize: 16)
-    button.layer.cornerRadius = SendCell.buttonHeight / 2
+  fileprivate let button: ActionButton = {
+    let button = ActionButton()
     return button
   }()
   

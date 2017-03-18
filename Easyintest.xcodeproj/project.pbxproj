@@ -32,6 +32,7 @@
 		2B78B4091E7B9D2B009380C0 /* KeyboardHandlerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B78B4081E7B9D2B009380C0 /* KeyboardHandlerViewController.swift */; };
 		2B78B40B1E7DC9FC009380C0 /* PhoneMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B78B40A1E7DC9FC009380C0 /* PhoneMask.swift */; };
 		2B78B40E1E7DD69B009380C0 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B78B40D1E7DD69B009380C0 /* Checkbox.swift */; };
+		2B78B4101E7DDC4C009380C0 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B78B40F1E7DDC4C009380C0 /* ActionButton.swift */; };
 		4F07571C044BC0E94747B66C /* Pods_Easyintest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08BDADDA90A39E2800A548F1 /* Pods_Easyintest.framework */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +88,7 @@
 		2B78B4081E7B9D2B009380C0 /* KeyboardHandlerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardHandlerViewController.swift; sourceTree = "<group>"; };
 		2B78B40A1E7DC9FC009380C0 /* PhoneMask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneMask.swift; sourceTree = "<group>"; };
 		2B78B40D1E7DD69B009380C0 /* Checkbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
+		2B78B40F1E7DDC4C009380C0 /* ActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +212,7 @@
 				2B78B3F91E7AB2A2009380C0 /* SendCell.swift */,
 				2B78B3E01E7AA641009380C0 /* StatefulTextField.swift */,
 				2B78B40D1E7DD69B009380C0 /* Checkbox.swift */,
+				2B78B40F1E7DDC4C009380C0 /* ActionButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 				2B78B3E91E7AAB1C009380C0 /* UIImage+Easyintest.swift in Sources */,
 				2B78B4051E7B45AB009380C0 /* ValidatorProtocol.swift in Sources */,
 				2B78B3FF1E7AB439009380C0 /* UpdatableCell.swift in Sources */,
+				2B78B4101E7DDC4C009380C0 /* ActionButton.swift in Sources */,
 				2B78B3E51E7AA9FF009380C0 /* UIColor+Easyintest.swift in Sources */,
 				2B78B40B1E7DC9FC009380C0 /* PhoneMask.swift in Sources */,
 				2B78B3FA1E7AB2A2009380C0 /* SendCell.swift in Sources */,
