@@ -30,6 +30,7 @@ final class SendCell: UITableViewCell {
   }
   
   private func setUp() {
+    backgroundColor = .white
     selectionStyle = .none
     
     button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)

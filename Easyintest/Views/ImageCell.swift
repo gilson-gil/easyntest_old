@@ -29,6 +29,7 @@ final class ImageCell: UITableViewCell {
   }
   
   private func setUp() {
+    backgroundColor = .white
     selectionStyle = .none
     
     addSubview(cellImageView)

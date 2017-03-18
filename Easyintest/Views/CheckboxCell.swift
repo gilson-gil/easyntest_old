@@ -9,6 +9,10 @@
 import UIKit
 import Cartography
 
+protocol CheckboxCellDelegate: class {
+  func didChange(checkbox: CheckboxCell, to: Bool)
+}
+
 final class CheckboxCell: UITableViewCell {
   fileprivate static let buttonHeight: CGFloat = 24
   
@@ -29,6 +33,8 @@ final class CheckboxCell: UITableViewCell {
   
   fileprivate var topPaddingConstraintGroup: ConstraintGroup?
   
+  weak var delegate: CheckboxCellDelegate?
+  
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     setUp()
@@ -40,6 +46,7 @@ final class CheckboxCell: UITableViewCell {
   }
   
   private func setUp() {
+    backgroundColor = .white
     selectionStyle = .none
     
     let containerView = createContainerView()
@@ -70,6 +77,8 @@ final class CheckboxCell: UITableViewCell {
     topPaddingConstraintGroup = constrain(label) { label in
       label.top == label.superview!.top + margin
     }
+    
+    checkbox.addTarget(self, action: #selector(checkboxValueChanged), for: .touchUpInside)
   }
 }
 
@@ -80,6 +89,13 @@ fileprivate extension CheckboxCell {
     view.setContentHuggingPriority(UILayoutPriorityRequired, for: .horizontal)
     view.setContentHuggingPriority(UILayoutPriorityRequired, for: .vertical)
     return view
+  }
+}
+
+// MARK: - Actions
+extension CheckboxCell {
+  func checkboxValueChanged() {
+    delegate?.didChange(checkbox: self, to: checkbox.isSelected)
   }
 }
 
@@ -99,5 +115,6 @@ extension CheckboxCell: Updatable {
 extension CheckboxCell: SelectionProtocol {
   func wasSelected() {
     checkbox.isSelected = !checkbox.isSelected
+    delegate?.didChange(checkbox: self, to: checkbox.isSelected)
   }
 }

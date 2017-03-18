@@ -30,6 +30,7 @@ final class TextFieldCell: UITableViewCell {
   }
   
   private func setUp() {
+    backgroundColor = .white
     selectionStyle = .none
     
     addSubview(textField)

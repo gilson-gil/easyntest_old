@@ -23,9 +23,6 @@ final class HomeViewController: UIViewController {
   fileprivate var homeViewModel: HomeViewModel? {
     didSet {
       self.tableView.register(self.homeViewModel?.configurators ?? [])
-      DispatchQueue.main.async {
-        self.tableView.reloadData()
-      }
     }
   }
   
@@ -86,6 +83,9 @@ extension HomeViewController: UITableViewDataSource {
     let configurator = homeViewModel.configurators[indexPath.row]
     let cell = tableView.dequeueReusableCell(withIdentifier: configurator.reuseIdentifier, for: indexPath)
     configurator.update(cell)
+    if let checkboxCell = cell as? CheckboxCell {
+      checkboxCell.delegate = self
+    }
     return cell
   }
 }
@@ -94,7 +94,36 @@ extension HomeViewController: UITableViewDataSource {
 extension HomeViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     if let selectionCell = tableView.cellForRow(at: indexPath) as? SelectionProtocol {
-      selectionCell.wasSelected()
+      defer {
+        selectionCell.wasSelected()
+      }
     }
+  }
+}
+
+// MARK: - CheckboxCell Delegate
+extension HomeViewController: CheckboxCellDelegate {
+  func didChange(checkbox: CheckboxCell, to: Bool) {
+    guard let indexPath = tableView.indexPath(for: checkbox) else {
+      return
+    }
+    let cell = homeViewModel?.homeCellViewModels[indexPath.row]
+    guard let show = cell?.show else {
+      return
+    }
+    guard let newViewModel = homeViewModel?.show(show, show: to), let change = newViewModel.change else {
+      return
+    }
+    tableView.beginUpdates()
+    homeViewModel = newViewModel.newViewModel
+    if change.insertion {
+      let insertionIndexPath = IndexPath(row: change.index, section: 0)
+      tableView.insertRows(at: [insertionIndexPath], with: .automatic)
+    } else {
+      let deletionIndexPath = IndexPath(row: change.index, section: 0)
+      
+      tableView.deleteRows(at: [deletionIndexPath], with: .top)
+    }
+    tableView.endUpdates()
   }
 }
