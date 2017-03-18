@@ -16,7 +16,7 @@ extension UIColor {
 		return UIColor(white: 172.0 / 255.0, alpha: 1.0)
 	}
 
-	class var easyWhite: UIColor {
+	class var easyAlmostWhite: UIColor {
 		return UIColor(red: 239.0 / 255.0, green: 238.0 / 255.0, blue: 237.0 / 255.0, alpha: 1.0)
 	}
 

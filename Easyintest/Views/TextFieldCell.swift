@@ -10,8 +10,8 @@ import UIKit
 import Cartography
 
 final class TextFieldCell: UITableViewCell {
-  fileprivate let textField: UITextField = {
-    let textField = UITextField()
+  fileprivate let textField: StatefulTextField = {
+    let textField = StatefulTextField()
     textField.font = UIFont.easyRegularFont(ofSize: 18)
     textField.textColor = UIColor.easyAlmostBlack
     return textField
@@ -53,6 +53,7 @@ extension TextFieldCell: Updatable {
   
   func update(_ viewModel: HomeCellViewModel) {
     textField.attributedPlaceholder = NSAttributedString(string: viewModel.message, attributes: [NSForegroundColorAttributeName: UIColor.easyGreyish, NSFontAttributeName: UIFont.easyRegularFont(ofSize: 16)])
+    textField.typeField = viewModel.typeField
     topPaddingConstraintGroup = constrain(textField, replace: topPaddingConstraintGroup) { textField in
       textField.top == textField.superview!.top + CGFloat(viewModel.topSpacing)
     }

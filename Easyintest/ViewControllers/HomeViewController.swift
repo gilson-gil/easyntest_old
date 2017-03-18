@@ -16,6 +16,7 @@ final class HomeViewController: UIViewController {
     tableView.separatorStyle = .none
     tableView.estimatedRowHeight = 44
     tableView.rowHeight = UITableViewAutomaticDimension
+    tableView.keyboardDismissMode = .onDrag
     return tableView
   }()
   
@@ -57,6 +58,17 @@ final class HomeViewController: UIViewController {
     DispatchQueue.global().async { [weak self] in
       self?.homeViewModel = HomeViewModel()
     }
+    let keyboardHandlerViewController = KeyboardHandlerViewController(scrollView: tableView)
+    keyboardHandlerViewController.willMove(toParentViewController: self)
+    keyboardHandlerViewController.view.alpha = 0
+    addChildViewController(keyboardHandlerViewController)
+    view.addSubview(keyboardHandlerViewController.view)
+    keyboardHandlerViewController.didMove(toParentViewController: self)
+  }
+  
+  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    super.touchesBegan(touches, with: event)
+    view.endEditing(true)
   }
 }
 

@@ -54,7 +54,7 @@
 			"id": 6,
 			"type": 1,
 			"message": "Telefone",
-			"typefield": "telnumber",
+			"typefield": 2,
 			"hidden": false,
 			"topSpacing": 10.0,
 			"show": null, 

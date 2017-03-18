@@ -12,6 +12,7 @@
 		2B78B3CB1E7AA276009380C0 /* EasyintestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B78B3CA1E7AA276009380C0 /* EasyintestUITests.swift */; };
 		2B78B3DB1E7AA306009380C0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B78B3DA1E7AA306009380C0 /* Images.xcassets */; };
 		2B78B3DE1E7AA374009380C0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B78B3DD1E7AA374009380C0 /* HomeViewController.swift */; };
+		2B78B3E11E7AA641009380C0 /* StatefulTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B78B3E01E7AA641009380C0 /* StatefulTextField.swift */; };
 		2B78B3E51E7AA9FF009380C0 /* UIColor+Easyintest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B78B3E41E7AA9FF009380C0 /* UIColor+Easyintest.swift */; };
 		2B78B3E71E7AAA69009380C0 /* UIFont+Easyintest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B78B3E61E7AAA69009380C0 /* UIFont+Easyintest.swift */; };
 		2B78B3E91E7AAB1C009380C0 /* UIImage+Easyintest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B78B3E81E7AAB1C009380C0 /* UIImage+Easyintest.swift */; };
@@ -26,6 +27,10 @@
 		2B78B3FC1E7AB3EE009380C0 /* HomeCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B78B3FB1E7AB3EE009380C0 /* HomeCellViewModel.swift */; };
 		2B78B3FF1E7AB439009380C0 /* UpdatableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B78B3FE1E7AB439009380C0 /* UpdatableCell.swift */; };
 		2B78B4021E7AB51D009380C0 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B78B4011E7AB51D009380C0 /* Cell.swift */; };
+		2B78B4051E7B45AB009380C0 /* ValidatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B78B4041E7B45AB009380C0 /* ValidatorProtocol.swift */; };
+		2B78B4071E7B8B04009380C0 /* PhoneValidationRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B78B4061E7B8B04009380C0 /* PhoneValidationRule.swift */; };
+		2B78B4091E7B9D2B009380C0 /* KeyboardHandlerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B78B4081E7B9D2B009380C0 /* KeyboardHandlerViewController.swift */; };
+		2B78B40B1E7DC9FC009380C0 /* PhoneMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B78B40A1E7DC9FC009380C0 /* PhoneMask.swift */; };
 		4F07571C044BC0E94747B66C /* Pods_Easyintest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08BDADDA90A39E2800A548F1 /* Pods_Easyintest.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +66,7 @@
 		2B78B3CC1E7AA277009380C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B78B3DA1E7AA306009380C0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2B78B3DD1E7AA374009380C0 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		2B78B3E01E7AA641009380C0 /* StatefulTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatefulTextField.swift; sourceTree = "<group>"; };
 		2B78B3E41E7AA9FF009380C0 /* UIColor+Easyintest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Easyintest.swift"; sourceTree = "<group>"; };
 		2B78B3E61E7AAA69009380C0 /* UIFont+Easyintest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Easyintest.swift"; sourceTree = "<group>"; };
 		2B78B3E81E7AAB1C009380C0 /* UIImage+Easyintest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Easyintest.swift"; sourceTree = "<group>"; };
@@ -75,6 +81,10 @@
 		2B78B3FB1E7AB3EE009380C0 /* HomeCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCellViewModel.swift; sourceTree = "<group>"; };
 		2B78B3FE1E7AB439009380C0 /* UpdatableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdatableCell.swift; sourceTree = "<group>"; };
 		2B78B4011E7AB51D009380C0 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		2B78B4041E7B45AB009380C0 /* ValidatorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidatorProtocol.swift; sourceTree = "<group>"; };
+		2B78B4061E7B8B04009380C0 /* PhoneValidationRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneValidationRule.swift; sourceTree = "<group>"; };
+		2B78B4081E7B9D2B009380C0 /* KeyboardHandlerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardHandlerViewController.swift; sourceTree = "<group>"; };
+		2B78B40A1E7DC9FC009380C0 /* PhoneMask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneMask.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +143,7 @@
 				2B78B3DF1E7AA631009380C0 /* Views */,
 				2B78B3EE1E7AB0E2009380C0 /* ViewModels */,
 				2B78B4001E7AB511009380C0 /* Models */,
+				2B78B4031E7B4599009380C0 /* Protocols */,
 				2B78B3FD1E7AB419009380C0 /* Helpers */,
 				2B78B3D91E7AA2F1009380C0 /* Resources */,
 			);
@@ -195,6 +206,7 @@
 				2B78B3F51E7AB28F009380C0 /* ImageCell.swift */,
 				2B78B3F71E7AB296009380C0 /* CheckboxCell.swift */,
 				2B78B3F91E7AB2A2009380C0 /* SendCell.swift */,
+				2B78B3E01E7AA641009380C0 /* StatefulTextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -212,6 +224,9 @@
 			isa = PBXGroup;
 			children = (
 				2B78B3FE1E7AB439009380C0 /* UpdatableCell.swift */,
+				2B78B4061E7B8B04009380C0 /* PhoneValidationRule.swift */,
+				2B78B40A1E7DC9FC009380C0 /* PhoneMask.swift */,
+				2B78B4081E7B9D2B009380C0 /* KeyboardHandlerViewController.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -222,6 +237,14 @@
 				2B78B4011E7AB51D009380C0 /* Cell.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		2B78B4031E7B4599009380C0 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				2B78B4041E7B45AB009380C0 /* ValidatorProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		9913144E53FA5DAB24AB8006 /* Frameworks */ = {
@@ -427,11 +450,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B78B3E91E7AAB1C009380C0 /* UIImage+Easyintest.swift in Sources */,
+				2B78B4051E7B45AB009380C0 /* ValidatorProtocol.swift in Sources */,
 				2B78B3FF1E7AB439009380C0 /* UpdatableCell.swift in Sources */,
 				2B78B3E51E7AA9FF009380C0 /* UIColor+Easyintest.swift in Sources */,
+				2B78B40B1E7DC9FC009380C0 /* PhoneMask.swift in Sources */,
 				2B78B3FA1E7AB2A2009380C0 /* SendCell.swift in Sources */,
 				2B78B3F61E7AB28F009380C0 /* ImageCell.swift in Sources */,
 				2B78B4021E7AB51D009380C0 /* Cell.swift in Sources */,
+				2B78B4071E7B8B04009380C0 /* PhoneValidationRule.swift in Sources */,
 				2B78B3AB1E7AA276009380C0 /* AppDelegate.swift in Sources */,
 				2B78B3F01E7AB0F4009380C0 /* HomeViewModel.swift in Sources */,
 				2B78B3DE1E7AA374009380C0 /* HomeViewController.swift in Sources */,
@@ -439,8 +465,10 @@
 				2B78B3F21E7AB25D009380C0 /* TextFieldCell.swift in Sources */,
 				2B78B3EB1E7AAB99009380C0 /* Constants.swift in Sources */,
 				2B78B3F81E7AB296009380C0 /* CheckboxCell.swift in Sources */,
+				2B78B4091E7B9D2B009380C0 /* KeyboardHandlerViewController.swift in Sources */,
 				2B78B3E71E7AAA69009380C0 /* UIFont+Easyintest.swift in Sources */,
 				2B78B3F41E7AB26B009380C0 /* LabelCell.swift in Sources */,
+				2B78B3E11E7AA641009380C0 /* StatefulTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
