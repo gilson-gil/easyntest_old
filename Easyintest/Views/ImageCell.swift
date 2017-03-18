@@ -8,6 +8,7 @@
 
 import UIKit
 import Cartography
+import Kingfisher
 
 final class ImageCell: UITableViewCell {
   fileprivate let cellImageView: UIImageView = {
@@ -52,7 +53,12 @@ extension ImageCell: Updatable {
   typealias ViewModel = HomeCellViewModel
   
   func update(_ viewModel: HomeCellViewModel) {
-    cellImageView.image = UIImage(named: viewModel.message)
+    if let url = URL(string: viewModel.message) {
+      let imageResource = ImageResource(downloadURL: url)
+      cellImageView.kf.setImage(with: imageResource, placeholder: UIImage.easyImagePlaceholder, options: nil, progressBlock: nil, completionHandler: nil)
+    } else {
+      cellImageView.image = UIImage.easyImagePlaceholder
+    }
     topPaddingConstraintGroup = constrain(cellImageView, replace: topPaddingConstraintGroup) { cellImageView in
       cellImageView.top == cellImageView.superview!.top + CGFloat(viewModel.topSpacing)
     }
