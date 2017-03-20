@@ -68,4 +68,25 @@ extension HomeViewModel {
     }
     return (newViewModel: aViewModel, change: (insertion: show, index: index))
   }
+  
+  func newText(_ text: String, at index: Int) -> HomeViewModel {
+    let oldViewModel = homeCellViewModels[index]
+    let newViewModel = oldViewModel.set(text: text)
+    var viewModels = homeCellViewModels
+    viewModels.remove(at: index)
+    viewModels.insert(newViewModel, at: index)
+    let viewModel = HomeViewModel(homeCellViewModels: viewModels)
+    return viewModel ?? self
+  }
+  
+  func sendTapped(_ completion: (Bool) -> ()) {
+    let notValidated = homeCellViewModels.filter {
+      !$0.validate()
+    }
+    guard notValidated.count > 0 else {
+      completion(false)
+      return
+    }
+    completion(true)
+  }
 }

@@ -70,6 +70,18 @@ final class HomeViewController: UIViewController {
   }
 }
 
+// MARK: - Private
+fileprivate extension HomeViewController {
+  func performSend() {
+    homeViewModel?.sendTapped { success in
+      guard success else {
+        return
+      }
+      
+    }
+  }
+}
+
 // MARK: - UITableView DataSource
 extension HomeViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -85,6 +97,8 @@ extension HomeViewController: UITableViewDataSource {
     configurator.update(cell)
     if let checkboxCell = cell as? CheckboxCell {
       checkboxCell.delegate = self
+    } else if let textFieldCell = cell as? TextFieldCell {
+      textFieldCell.delegate = self
     }
     return cell
   }
@@ -125,5 +139,22 @@ extension HomeViewController: CheckboxCellDelegate {
       tableView.deleteRows(at: [deletionIndexPath], with: .top)
     }
     tableView.endUpdates()
+  }
+}
+
+// MARK: - TextFieldCell Delegate
+extension HomeViewController: TextFieldCellDelegate {
+  func didEndEditing(cell: TextFieldCell, with text: String) {
+    guard let indexPath = tableView.indexPath(for: cell) else {
+      return
+    }
+    homeViewModel = homeViewModel?.newText(text, at: indexPath.row)
+  }
+}
+
+// MARK: - SendCell Delegate
+extension HomeViewController: SendCellDelegate {
+  func sendTapped() {
+    performSend()
   }
 }

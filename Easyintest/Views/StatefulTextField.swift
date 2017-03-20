@@ -12,6 +12,10 @@ enum StatefulTextFieldState {
   case inactive, active, fail, success
 }
 
+protocol StatefulTextFieldDelegate: class {
+  func didEndEditing(with text: String)
+}
+
 final class StatefulTextField: UITextField {
   fileprivate static let placeholderScaleFactor: CGFloat = 0.8
   fileprivate static let clearButtonSize: CGFloat = 30
@@ -24,17 +28,14 @@ final class StatefulTextField: UITextField {
       switch typeField {
       case .telNumber:
         keyboardType = .phonePad
-        delegate = self
       case .email:
         keyboardType = .emailAddress
         autocapitalizationType = .none
         autocorrectionType = .no
-        delegate = nil
       case .text:
         keyboardType = .default
         autocapitalizationType = .sentences
         autocorrectionType = .default
-        delegate = nil
       }
     }
   }
@@ -124,6 +125,8 @@ final class StatefulTextField: UITextField {
     return super.resignFirstResponder()
   }
   
+  weak var statefulDelegate: StatefulTextFieldDelegate?
+  
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     setUp()
@@ -138,6 +141,7 @@ final class StatefulTextField: UITextField {
     borderStyle = .none
     layer.masksToBounds = false
     tintColor = UIColor.easySoftBlue
+    delegate = self
     
     layer.addSublayer(lineLayer)
     
@@ -222,5 +226,13 @@ extension StatefulTextField: UITextFieldDelegate {
     let masked = PhoneMask.mask(text: text)
     textField.text = masked
     return false
+  }
+  
+  func textFieldDidEndEditing(_ textField: UITextField) {
+    guard let text = textField.text else {
+      return
+    }
+    let trimmedText = text.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+    statefulDelegate?.didEndEditing(with: trimmedText)
   }
 }
