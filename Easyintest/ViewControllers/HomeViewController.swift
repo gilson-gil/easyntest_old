@@ -77,9 +77,7 @@ fileprivate extension HomeViewController {
       guard success else {
         return
       }
-      let navigationController = UINavigationController(rootViewController: InvestmentViewController())
-      navigationController.navigationBar.barTintColor = UIColor.white
-      UIApplication.shared.delegate?.window??.rootViewController = navigationController
+      UIApplication.shared.delegate?.window??.rootViewController = TabViewController()
     }
   }
 }
