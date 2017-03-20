@@ -29,7 +29,7 @@ struct Cell {
   let typeField: TypeField?
   let hidden: Bool
   let topSpacing: Float
-  let show: Bool
+  let show: Int?
   let required: Bool
   
   init(json: [String: Any]) {
@@ -39,7 +39,7 @@ struct Cell {
     typeField = TypeField(rawValue: json["typefield"] as? Int ?? 0)
     hidden = json["hidden"] as? Bool ?? true
     topSpacing = json["topSpacing"] as? Float ?? Constants.defaultMargin
-    show = json["show"] as? Bool ?? false
+    show = json["show"] as? Int
     required = json["required"] as? Bool ?? false
   }
 }

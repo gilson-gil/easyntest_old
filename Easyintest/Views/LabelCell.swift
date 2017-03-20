@@ -32,6 +32,7 @@ final class LabelCell: UITableViewCell {
   }
   
   private func setUp() {
+    backgroundColor = .white
     selectionStyle = .none
     
     addSubview(label)

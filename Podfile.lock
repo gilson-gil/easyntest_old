@@ -1,15 +1,18 @@
 PODS:
   - Cartography (1.0.1)
+  - Kingfisher (3.5.2)
   - Validator (2.1.1)
 
 DEPENDENCIES:
   - Cartography (~> 1.0.1)
+  - Kingfisher (~> 3.5.2)
   - Validator (~> 2.1.1)
 
 SPEC CHECKSUMS:
   Cartography: c1460e99395b824d9d75360b0382faeb0b33dcd7
+  Kingfisher: 9950e382c500b6834ce004c7c4131c444e90c3a1
   Validator: b1793fbfd0046097551d0edd18e2c30792d69ef5
 
-PODFILE CHECKSUM: 033ad9926f456d5fe025a325843e06f21a98c70e
+PODFILE CHECKSUM: 6d243b0198a90afa74161efdd04fbcb187accdeb
 
 COCOAPODS: 1.2.0

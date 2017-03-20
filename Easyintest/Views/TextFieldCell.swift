@@ -9,6 +9,10 @@
 import UIKit
 import Cartography
 
+protocol TextFieldCellDelegate: class {
+  func didEndEditing(cell: TextFieldCell, with text: String)
+}
+
 final class TextFieldCell: UITableViewCell {
   fileprivate let textField: StatefulTextField = {
     let textField = StatefulTextField()
@@ -18,6 +22,8 @@ final class TextFieldCell: UITableViewCell {
   }()
   
   fileprivate var topPaddingConstraintGroup: ConstraintGroup?
+  
+  weak var delegate: TextFieldCellDelegate?
   
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
@@ -30,6 +36,9 @@ final class TextFieldCell: UITableViewCell {
   }
   
   private func setUp() {
+    textField.statefulDelegate = self
+    
+    backgroundColor = .white
     selectionStyle = .none
     
     addSubview(textField)
@@ -52,10 +61,27 @@ extension TextFieldCell: Updatable {
   typealias ViewModel = HomeCellViewModel
   
   func update(_ viewModel: HomeCellViewModel) {
+    if let text = viewModel.fieldText {
+      textField.text = text
+    }
     textField.attributedPlaceholder = NSAttributedString(string: viewModel.message, attributes: [NSForegroundColorAttributeName: UIColor.easyGreyish, NSFontAttributeName: UIFont.easyRegularFont(ofSize: 16)])
     textField.typeField = viewModel.typeField
     topPaddingConstraintGroup = constrain(textField, replace: topPaddingConstraintGroup) { textField in
       textField.top == textField.superview!.top + CGFloat(viewModel.topSpacing)
     }
+  }
+}
+
+// MARK: - Selection Protocol
+extension TextFieldCell: SelectionProtocol {
+  func wasSelected() {
+    let _ = textField.becomeFirstResponder()
+  }
+}
+
+// MARK: - StatefulTextField Delegate
+extension TextFieldCell: StatefulTextFieldDelegate {
+  func didEndEditing(with text: String) {
+    delegate?.didEndEditing(cell: self, with: text)
   }
 }

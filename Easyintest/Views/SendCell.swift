@@ -9,6 +9,10 @@
 import UIKit
 import Cartography
 
+protocol SendCellDelegate: class {
+  func sendTapped()
+}
+
 final class SendCell: UITableViewCell {
   fileprivate static let buttonHeight: CGFloat = 50
   
@@ -18,6 +22,8 @@ final class SendCell: UITableViewCell {
   }()
   
   fileprivate var topPaddingConstraintGroup: ConstraintGroup?
+  
+  weak var delegate: SendCellDelegate?
   
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
@@ -30,6 +36,7 @@ final class SendCell: UITableViewCell {
   }
   
   private func setUp() {
+    backgroundColor = .white
     selectionStyle = .none
     
     button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
@@ -53,7 +60,7 @@ final class SendCell: UITableViewCell {
 // MARK: - Actions
 extension SendCell {
   func buttonTapped() {
-    
+    delegate?.sendTapped()
   }
 }
 
