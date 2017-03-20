@@ -1,18 +1,21 @@
 PODS:
   - Cartography (1.0.1)
   - Kingfisher (3.5.2)
+  - SwiftCharts (0.5.1)
   - Validator (2.1.1)
 
 DEPENDENCIES:
   - Cartography (~> 1.0.1)
   - Kingfisher (~> 3.5.2)
+  - SwiftCharts (~> 0.5.1)
   - Validator (~> 2.1.1)
 
 SPEC CHECKSUMS:
   Cartography: c1460e99395b824d9d75360b0382faeb0b33dcd7
   Kingfisher: 9950e382c500b6834ce004c7c4131c444e90c3a1
+  SwiftCharts: d263289cdc7fc955fef54ae3bc6529f696e69933
   Validator: b1793fbfd0046097551d0edd18e2c30792d69ef5
 
-PODFILE CHECKSUM: 6d243b0198a90afa74161efdd04fbcb187accdeb
+PODFILE CHECKSUM: 7279b4b86bdb1415eb6b6f1c19e806499e58d897
 
 COCOAPODS: 1.2.0
