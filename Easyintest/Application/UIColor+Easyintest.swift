@@ -54,7 +54,11 @@ extension UIColor {
 
 	class var easyDarkSkyBlueThree: UIColor {
 		return UIColor(red: 74.0 / 255.0, green: 144.0 / 255.0, blue: 226.0 / 255.0, alpha: 1.0)
-	}
+  }
+  
+  class var easyDarkSkyBlueFour: UIColor {
+    return UIColor(red: 84.0 / 255.0, green: 133.0 / 255.0, blue: 200.0 / 255.0, alpha: 1.0)
+  }
 
 	class var easyRiskOne: UIColor {
 		return UIColor(red: 116.0 / 255.0, green: 218.0 / 255.0, blue: 97.0 / 255.0, alpha: 1.0)
@@ -74,5 +78,9 @@ extension UIColor {
 
 	class var easyRiskFive: UIColor {
 		return UIColor(red: 255.0 / 255.0, green: 54.0 / 255.0, blue: 52.0 / 255.0, alpha: 1.0)
-	}
+  }
+  
+  class var easySquash: UIColor {
+    return UIColor(red: 246.0 / 255.0, green: 166.0 / 255.0, blue: 35.0 / 255.0, alpha: 1.0)
+  }
 }

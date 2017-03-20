@@ -31,9 +31,6 @@ final class InvestmentViewController: UIViewController {
   }
   
   private func setUp() {
-    navigationItem.title = "Investimento"
-    let shareItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
-    navigationItem.rightBarButtonItems = [shareItem]
     view.addSubview(tableView)
     
     constrain(tableView) { tableView in
@@ -46,6 +43,13 @@ final class InvestmentViewController: UIViewController {
     tableView.register(investmentViewModel?.configurators ?? [])
     tableView.dataSource = self
     tableView.delegate = self
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    navigationItem.title = "Investimento"
+    let shareItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
+    navigationItem.rightBarButtonItems = [shareItem]
   }
 }
 

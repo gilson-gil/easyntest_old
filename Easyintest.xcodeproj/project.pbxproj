@@ -50,6 +50,10 @@
 		2B78B42E1E801EFD009380C0 /* InvestmentMoreInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B78B42D1E801EFD009380C0 /* InvestmentMoreInfoCell.swift */; };
 		2B78B4301E802041009380C0 /* InvestmentInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B78B42F1E802041009380C0 /* InvestmentInfoCell.swift */; };
 		2B78B4341E803121009380C0 /* fund.json in Resources */ = {isa = PBXBuildFile; fileRef = 2B78B4331E803121009380C0 /* fund.json */; };
+		2B78B4361E8064F5009380C0 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B78B4351E8064F5009380C0 /* ContactViewController.swift */; };
+		2B78B4381E80663E009380C0 /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B78B4371E80663E009380C0 /* ContactViewModel.swift */; };
+		2B78B43A1E806895009380C0 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B78B4391E806895009380C0 /* TabViewController.swift */; };
+		2B78B43C1E8068FA009380C0 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B78B43B1E8068FA009380C0 /* TabItem.swift */; };
 		4F07571C044BC0E94747B66C /* Pods_Easyintest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08BDADDA90A39E2800A548F1 /* Pods_Easyintest.framework */; };
 /* End PBXBuildFile section */
 
@@ -123,6 +127,10 @@
 		2B78B42D1E801EFD009380C0 /* InvestmentMoreInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvestmentMoreInfoCell.swift; sourceTree = "<group>"; };
 		2B78B42F1E802041009380C0 /* InvestmentInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvestmentInfoCell.swift; sourceTree = "<group>"; };
 		2B78B4331E803121009380C0 /* fund.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fund.json; sourceTree = "<group>"; };
+		2B78B4351E8064F5009380C0 /* ContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
+		2B78B4371E80663E009380C0 /* ContactViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewModel.swift; sourceTree = "<group>"; };
+		2B78B4391E806895009380C0 /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
+		2B78B43B1E8068FA009380C0 /* TabItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,7 +241,9 @@
 			isa = PBXGroup;
 			children = (
 				2B78B3DD1E7AA374009380C0 /* HomeViewController.swift */,
+				2B78B4391E806895009380C0 /* TabViewController.swift */,
 				2B78B4131E8006FB009380C0 /* InvestmentViewController.swift */,
+				2B78B4351E8064F5009380C0 /* ContactViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -256,6 +266,7 @@
 				2B78B42B1E801596009380C0 /* RiskGrade.swift */,
 				2B78B42D1E801EFD009380C0 /* InvestmentMoreInfoCell.swift */,
 				2B78B42F1E802041009380C0 /* InvestmentInfoCell.swift */,
+				2B78B43B1E8068FA009380C0 /* TabItem.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -272,6 +283,7 @@
 				2B78B41D1E800EEC009380C0 /* InvestmentRiskGradeViewModel.swift */,
 				2B78B41F1E800F19009380C0 /* InvestmentMoreInfoViewModel.swift */,
 				2B78B4211E801015009380C0 /* InvestmentInfoViewModel.swift */,
+				2B78B4371E80663E009380C0 /* ContactViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -509,6 +521,7 @@
 			files = (
 				2B78B41E1E800EEC009380C0 /* InvestmentRiskGradeViewModel.swift in Sources */,
 				2B78B4161E800E0E009380C0 /* InvestmentViewModel.swift in Sources */,
+				2B78B4361E8064F5009380C0 /* ContactViewController.swift in Sources */,
 				2B78B3E91E7AAB1C009380C0 /* UIImage+Easyintest.swift in Sources */,
 				2B78B4241E801079009380C0 /* InvestmentTitleCell.swift in Sources */,
 				2B78B4051E7B45AB009380C0 /* ValidatorProtocol.swift in Sources */,
@@ -523,6 +536,7 @@
 				2B78B3FA1E7AB2A2009380C0 /* SendCell.swift in Sources */,
 				2B78B3F61E7AB28F009380C0 /* ImageCell.swift in Sources */,
 				2B78B4021E7AB51D009380C0 /* Cell.swift in Sources */,
+				2B78B4381E80663E009380C0 /* ContactViewModel.swift in Sources */,
 				2B78B4071E7B8B04009380C0 /* PhoneValidationRule.swift in Sources */,
 				2B78B41C1E800ED2009380C0 /* InvestmentGraphViewModel.swift in Sources */,
 				2B78B3AB1E7AA276009380C0 /* AppDelegate.swift in Sources */,
@@ -539,9 +553,11 @@
 				2B78B3F81E7AB296009380C0 /* CheckboxCell.swift in Sources */,
 				2B78B4091E7B9D2B009380C0 /* KeyboardHandlerViewController.swift in Sources */,
 				2B78B42A1E8014EF009380C0 /* InvestmentRiskCell.swift in Sources */,
+				2B78B43A1E806895009380C0 /* TabViewController.swift in Sources */,
 				2B78B3E71E7AAA69009380C0 /* UIFont+Easyintest.swift in Sources */,
 				2B78B4141E8006FB009380C0 /* InvestmentViewController.swift in Sources */,
 				2B78B4221E801015009380C0 /* InvestmentInfoViewModel.swift in Sources */,
+				2B78B43C1E8068FA009380C0 /* TabItem.swift in Sources */,
 				2B78B3F41E7AB26B009380C0 /* LabelCell.swift in Sources */,
 				2B78B42C1E801596009380C0 /* RiskGrade.swift in Sources */,
 				2B78B3E11E7AA641009380C0 /* StatefulTextField.swift in Sources */,
