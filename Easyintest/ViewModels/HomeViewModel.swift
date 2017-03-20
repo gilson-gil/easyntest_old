@@ -70,11 +70,15 @@ extension HomeViewModel {
   }
   
   func newText(_ text: String, at index: Int) -> HomeViewModel {
-    let oldViewModel = homeCellViewModels[index]
+    let hiddenItems = homeCellViewModels.enumerated().filter {
+      $0.element.hidden && $0.offset <= index
+    }
+    let adjustedIndex = index + hiddenItems.count
+    let oldViewModel = homeCellViewModels[adjustedIndex]
     let newViewModel = oldViewModel.set(text: text)
     var viewModels = homeCellViewModels
-    viewModels.remove(at: index)
-    viewModels.insert(newViewModel, at: index)
+    viewModels.remove(at: adjustedIndex)
+    viewModels.insert(newViewModel, at: adjustedIndex)
     let viewModel = HomeViewModel(homeCellViewModels: viewModels)
     return viewModel ?? self
   }
@@ -83,7 +87,7 @@ extension HomeViewModel {
     let notValidated = homeCellViewModels.filter {
       !$0.validate()
     }
-    guard notValidated.count > 0 else {
+    guard notValidated.count == 0 else {
       completion(false)
       return
     }

@@ -77,7 +77,9 @@ fileprivate extension HomeViewController {
       guard success else {
         return
       }
-      
+      let navigationController = UINavigationController(rootViewController: InvestmentViewController())
+      navigationController.navigationBar.barTintColor = UIColor.white
+      UIApplication.shared.delegate?.window??.rootViewController = navigationController
     }
   }
 }
@@ -99,6 +101,8 @@ extension HomeViewController: UITableViewDataSource {
       checkboxCell.delegate = self
     } else if let textFieldCell = cell as? TextFieldCell {
       textFieldCell.delegate = self
+    } else if let sendCell = cell as? SendCell {
+      sendCell.delegate = self
     }
     return cell
   }
@@ -135,7 +139,6 @@ extension HomeViewController: CheckboxCellDelegate {
       tableView.insertRows(at: [insertionIndexPath], with: .automatic)
     } else {
       let deletionIndexPath = IndexPath(row: change.index, section: 0)
-      
       tableView.deleteRows(at: [deletionIndexPath], with: .top)
     }
     tableView.endUpdates()

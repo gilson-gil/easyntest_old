@@ -16,4 +16,16 @@ extension UIImage {
   class var easyImagePlaceholder: UIImage? {
     return UIImage(named: "bitmap")
   }
+  
+  class var easyImageSeparator: UIImage? {
+    return UIImage(named: "spearador")
+  }
+  
+  class var easyImageIndicator: UIImage? {
+    return UIImage(named: "groupCopy10")
+  }
+  
+  class var easySetaBaixar: UIImage? {
+    return UIImage(named: "setaBaixar")
+  }
 }
