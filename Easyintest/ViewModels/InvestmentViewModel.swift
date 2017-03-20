@@ -29,7 +29,8 @@ struct InvestmentViewModel {
     let headerViewModel = InvestmentHeaderViewModel(title: json["title"] as? String ?? "", content: json["fundName"] as? String ?? "")
     let description = (json["whatIs"] as? String ?? "") + "\n" + (json["definition"] as? String ?? "")
     let descriptionViewModel = InvestmentDescriptionViewModel(text: description)
-    let graphViewModel = InvestmentGraphViewModel()
+    let graph = json["graph"] as? [String: Any] ?? [:]
+    let graphViewModel = InvestmentGraphViewModel(cdi: graph["CDI"] as? [Float] ?? [], fund: graph["fund"] as? [Float] ?? [], x: graph["x"] as? [String] ?? [])
     let riskGradeViewModel = InvestmentRiskGradeViewModel(riskTitle: json["riskTitle"] as? String ?? "", risk: json["risk"] as? Int ?? 0)
     let moreInfo = json["moreInfo"] as? [String: Any] ?? [:]
     let monthInfo = moreInfo["month"] as? [String: Float] ?? [:]
@@ -61,7 +62,7 @@ struct InvestmentViewModel {
     var configurators: [CellConfiguratorType] = []
     configurators.append(CellConfigurator<InvestmentTitleCell>(viewModel: headerViewModel))
     configurators.append(CellConfigurator<InvestmentDescriptionCell>(viewModel: descriptionViewModel))
-//    configurators.append(CellConfigurator<InvestmentGraphViewModel>(viewModel: headerViewModel))
+    configurators.append(CellConfigurator<InvestmentGraphCell>(viewModel: graphViewModel))
     configurators.append(CellConfigurator<InvestmentRiskCell>(viewModel: riskGradeViewModel))
     configurators.append(CellConfigurator<InvestmentMoreInfoCell>(viewModel: moreInfoViewModel))
     infoViewModels.forEach {

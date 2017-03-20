@@ -9,5 +9,7 @@
 import Foundation
 
 struct InvestmentGraphViewModel {
-  
+  let cdi: [Float]
+  let fund: [Float]
+  let x: [String]
 }
